@@ -8,16 +8,17 @@ alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 total_priorities = 0
 
 for rucksack in rucksacks:
-    half_len = len(rucksack)//2
+    half_len = len(rucksack)//2     # cut the rucksack in two parts
     first_half = rucksack[:half_len]
     second_half = rucksack[half_len:len(rucksack)]
     common_letter = ''
 
     for char in first_half:
-        if not common_letter:      # if the letter appears more than once in both rucksack halves, we only take it into account once
+        # if the letter appears more than once in both rucksack halves, we only take it into account once
+        if not common_letter:
             if char in second_half:
                 common_letter = char
-                char_priority = alphabet.index(char) + 1
+                char_priority = alphabet.index(char) + 1       # priorities start at 1, indexes start at 0
                 total_priorities += char_priority
 
 print(total_priorities)
@@ -32,6 +33,7 @@ for rucksack_group in rucksacks_groups:
     common_letter = ''
     for char in rucksack_group[0]:
         if not common_letter:
+            # badge must be in all three elves' rucksacks
             if char in rucksack_group[1] and char in rucksack_group[2]:
                 common_letter = char
                 badge_priority = alphabet.index(char) + 1

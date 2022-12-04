@@ -11,6 +11,7 @@ letter_value = {'A': 1,
                 'Y': 2,
                 'Z': 3}
 
+# the combinations that lead me to win, lose, or end in a draw
 win_list = [['A', 'Y'], ['B', 'Z'], ['C', 'X']]
 draw_list = [('A', 'X'), ('B', 'Y'), ('C', 'Z')]
 lose_list = [('B', 'X'), ('C', 'Y'), ('A', 'Z')]

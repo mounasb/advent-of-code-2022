@@ -11,6 +11,7 @@ for i in range(len(sections)):
 
 full_overlap_count = 0
 for a, b, c, d in sections:
+    # if one assignment fully contains the other
     full_overlap_condition = (a >= c and b <= d) or (c >= a and d <= b)
     if full_overlap_condition:
         full_overlap_count += 1
@@ -23,12 +24,9 @@ print(10 * "-")
 
 overlap_count = 0
 for a, b, c, d in sections:
-    # print(a, b, c, d)
+    # if two assignments overlap
     overlap_condition = b >= c and a <= d
     if overlap_condition:
-        # print("overlap\n")
         overlap_count += 1
-    # else:
-    #     print("no overlap\n")
 
 print(overlap_count)

@@ -9,6 +9,7 @@ calories = []
 for i, number in enumerate(numbers):
     if number:
         total += int(number)
+        # if it's the last number, add it now (no need to wait for an empty line to appear next)
         if i == len(numbers) - 1:
             calories.append(total)      
     else:
