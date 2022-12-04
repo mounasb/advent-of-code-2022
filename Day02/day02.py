@@ -13,8 +13,8 @@ letter_value = {'A': 1,
 
 # the combinations that lead me to win, lose, or end in a draw
 win_list = [['A', 'Y'], ['B', 'Z'], ['C', 'X']]
-draw_list = [('A', 'X'), ('B', 'Y'), ('C', 'Z')]
-lose_list = [('B', 'X'), ('C', 'Y'), ('A', 'Z')]
+draw_list = [['A', 'X'], ['B', 'Y'], ['C', 'Z']]
+lose_list = [['B', 'X'], ['C', 'Y'], ['A', 'Z']]
 
 def my_score(elf_choice, my_choice):
     # default = if I win
@@ -28,8 +28,8 @@ def my_score(elf_choice, my_choice):
 
 def get_total_score(rounds):
     total_score = 0
-    for round in rounds:
-        total_score += my_score(round[0], round[1])
+    for elf_choice, my_choice in rounds:
+        total_score += my_score(elf_choice, my_choice)
     return total_score
 
 print(get_total_score(rounds))
