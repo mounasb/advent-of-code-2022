@@ -7,7 +7,7 @@ parts = { 'Part one': 4,
           'Part two': 14}
             
 for part, length in parts.items():
-    for i in range(length, len(buffer)-1):
+    for i in range(length, len(buffer)):
         segment = buffer[i-length:i]
         for letter in segment:
             if segment.count(letter) > 1:
