@@ -1,25 +1,17 @@
-## PART ONE 
-
 with open("Day06/day06_input.txt") as f:
     buffer = f.read()
 
-for i in range(4, len(buffer)-1):
-    segment = buffer[i-4:i]
-    for letter in segment:
-        if segment.count(letter) > 1:
+## PARTS ONE & TWO
+
+parts = { 'Part one': 4,
+          'Part two': 14}
+            
+for part, length in parts.items():
+    for i in range(length, len(buffer)-1):
+        segment = buffer[i-length:i]
+        for letter in segment:
+            if segment.count(letter) > 1:
+                break
+        else:
+            print(part, " - Start of marker :", i)
             break
-    else:
-        print("Start of packet marker :", i)
-        break
-
-
-## PART TWO
-
-for i in range(14, len(buffer)-1):
-    segment = buffer[i-14:i]
-    for letter in segment:
-        if segment.count(letter) > 1:
-            break
-    else:
-        print("Start of message marker :", i)
-        break
