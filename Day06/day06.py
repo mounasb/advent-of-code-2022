@@ -4,7 +4,7 @@ with open("Day06/day06_input.txt") as f:
     buffer = f.read()
 
 for i in range(4, len(buffer)-1):
-    segment = buffer[i-4:i+1]
+    segment = buffer[i-4:i]
     for letter in segment:
         if segment.count(letter) > 1:
             break
