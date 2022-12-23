@@ -15,11 +15,10 @@ for rucksack in rucksacks:
 
     for char in first_half:
         # if the letter appears more than once in both rucksack halves, we only take it into account once
-        if not common_letter:
-            if char in second_half:
-                common_letter = char
-                char_priority = alphabet.index(char) + 1       # priorities start at 1, indexes start at 0
-                total_priorities += char_priority
+        if not common_letter and char in second_half:
+            common_letter = char
+            char_priority = alphabet.index(char) + 1       # priorities start at 1, indexes start at 0
+            total_priorities += char_priority
 
 print(total_priorities)
 print(10 * "-")

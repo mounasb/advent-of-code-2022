@@ -23,9 +23,8 @@ moves = [[int(char) for char in re.findall("\d+", move)] for move in moves]
 for move in moves:
     nb_crates, first_stack_nb, second_stack_nb = move
     for i in range(nb_crates):
-        if first_stack_nb in stacks:
-            crate = stacks[first_stack_nb].pop()
-            stacks[second_stack_nb].append(crate)
+        crate = stacks[first_stack_nb].pop()
+        stacks[second_stack_nb].append(crate)
 
 stack_tops = ''
 for value in stacks.values():
